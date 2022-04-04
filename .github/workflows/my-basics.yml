@@ -40,7 +40,8 @@ jobs:
   # This workflow contains a single job called "build"
   my-deploy:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Print Hello Message
-       run: echo "Hello Olga"
+       run: echo Hello Olga
        
