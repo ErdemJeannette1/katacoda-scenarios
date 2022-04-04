@@ -45,6 +45,11 @@ jobs:
           echo Hello Message1
           echo Hello Message2
           echo APPLICATION NAME: ${{ env.APPLICATION_NAME }}
+          
+      - name:  List current folder
+        run: ls -la
+       
+          
  
   # This workflow contains a single job called "build"
   my-deploy:
