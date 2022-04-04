@@ -49,7 +49,11 @@ jobs:
       - name:  List current folder
         run: ls -la
        
-          
+      - name: git clone my repo
+        uses: actions/checkout@v1
+        
+      - name:  List current folder (double)
+        run: ls -la  
  
   # This workflow contains a single job called "build"
   my-deploy:
@@ -65,5 +69,9 @@ jobs:
         run: |
           echo deploy package name ${{ env.DEPLOY_PACKAGE_NAME }}
              
-          
+      - name: lits test package aws
+        run: aws --version
+        
+      - name: lits test package zip
+        run: zip  
        
