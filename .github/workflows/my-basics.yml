@@ -59,11 +59,22 @@ jobs:
   my-deploy:
     runs-on: ubuntu-latest
     needs: [my-testing]
+    env: 
+      VAR1: this is job lavel VAR1
+      VAR2: this is job lavel VAR2
     
     steps:
       - name: Print Hello Message
         run: 
           echo Hello Olga
+          
+      - name: Print env VARS
+        run: |
+          echo VAR1 = ${{ env.VAR1 }}
+          echo VAR2 = ${{ env.VAR2 }}
+          echo VAR3 = $LOCAL_VAR
+        env:
+          LOCAL_VAR: This is super local 
           
       - name: Print deployment package
         run: |
@@ -73,5 +84,5 @@ jobs:
         run: aws --version
         
       - name: lits test package zip
-        run: zip  
+        run: zip  --version
        
